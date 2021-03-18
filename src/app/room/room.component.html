@@ -1,0 +1,34 @@
+<div class="room">
+  <mat-card class="room-container">
+    <form [formGroup]="pokerForm" (ngSubmit)="joinRoom()">
+      <h2 class="primary-color">SCRUM POKER</h2>
+      <mat-form-field appearance="outline" class="width--w-300 form-field">
+        <mat-label>Room</mat-label>
+        <input matInput formControlName="room">
+        <mat-error
+						*ngIf="pokerForm.get('room').hasError('required')"
+						>Room required</mat-error
+					>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="width--w-300 form-field">
+        <mat-label>User Name</mat-label>
+        <input matInput formControlName="username">
+        <mat-error
+          *ngIf="pokerForm.get('username').hasError('required')"
+          >Username required</mat-error
+        >
+        <mat-error
+          *ngIf="pokerForm.get('username').hasError('minlength')"
+          >Username min length 2</mat-error
+        >
+      </mat-form-field>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        class="button--w-150 button--h-50"
+      >Join Room</button>
+    </form>
+  </mat-card>
+</div>

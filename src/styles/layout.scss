@@ -1,0 +1,9 @@
+.width {
+  &--w {
+    @each $width in (200, 300, 400, 500) {
+      &-#{$width} {
+        width: #{$width}px;
+      }
+    }
+  }
+}

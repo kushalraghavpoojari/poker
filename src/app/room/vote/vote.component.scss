@@ -1,0 +1,133 @@
+.vote {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  // justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  &-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &-members {
+    padding-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    &__card {
+      padding: 10px;
+      p {
+        color: #9e9c9c;
+        &::before {
+          content: '';
+          display: inline-block;
+          background: #1be9a6;
+          height: 8px;
+          width: 8px;
+          border-radius: 50%;
+          margin-top: 20px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  .cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    .cards-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .cards-footer {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1024px;
+      justify-content: center;
+      &__padding {
+        padding: 10px;
+        .card-number {
+          display: flex;
+          justify-content: center;
+          h6 {
+            font-size: 26px;
+          }
+        }
+      }
+      // &__padding:hover {
+      //   border: 5px solid black;
+      // }
+    }
+  }
+  .results {
+    display: flex;
+    flex-direction: column;
+    &-avg {
+      padding-top: 30px;
+      &__score {
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        p {
+          margin: 10px;
+        }
+        &-text {
+          text-align: center;
+          font-size: 30px;
+          font-weight: 400;
+        }
+      }
+    }
+    &-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &-container {
+      padding: 10px;
+      padding-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .users {
+      padding-left: 10px;
+      padding-right: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .userName {
+      font-size: 20px;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+    .points {
+      font-size: 35px;
+    }
+  }
+}
+
+.selected-card {
+  color: red;
+}
+
+.pull-up {
+  display: inline-block;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.pull-up:hover{
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
+}

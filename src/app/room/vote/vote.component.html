@@ -56,8 +56,14 @@
     </div>
     <div class="results-avg">
       <mat-card class="results-avg__score">
-        <p>Avg. score</p>
-        <p *ngIf="votingCompleted" class="results-avg__score-text">{{getAvgScore()}}</p>
+        <p>Score</p>
+        <p *ngIf="votingCompleted" class="results-avg__score-text">
+          <span *ngIf="!getAvgScore().isScoreEqual">
+            <span class="results-avg__score-text-avg">{{getAvgScore().avg}} ⇒ </span>
+            <span class="results-avg__score-text-near">{{getAvgScore().nearestScore}}</span>
+          </span>
+          <span *ngIf="getAvgScore().isScoreEqual">{{getAvgScore().nearestScore}}</span>
+        </p>
         <p *ngIf="!votingCompleted" class="results-avg__score-text">--</p>
       </mat-card>
     </div>

@@ -77,20 +77,21 @@ export class VoteComponent implements OnInit {
     this.selectedCard = this.cardNumbers[this.selectedCardIndex];
   }
 
-  getAvgScore(): number {
+  getAvgScore(): {avg:number;nearestScore:number;isScoreEqual:boolean} {
     const totalUsers = this.users.length;
     const total = this.users.reduce((acc, cur) => {
       return acc + cur.points;
     }, 0);
-    const avg = Math.ceil(total/totalUsers);
-    let nearestAvg: number;
+    let score:any = {};
+    score.avg = Math.ceil(total/totalUsers);
     for (let number of this.cardNumbers) {
-      if (number > avg || number === avg) {
-        nearestAvg = number;
+      if (number > score.avg || number === score.avg) {
+        score.nearestScore = number;
         break;
       }
     }
-    return nearestAvg;
+    score.isScoreEqual = score.nearestScore === score.avg;
+    return score;
   }
 
 }

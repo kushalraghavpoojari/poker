@@ -68,6 +68,8 @@
     display: flex;
     flex-direction: column;
     &-avg {
+      display: flex;
+      justify-content: center;
       padding-top: 30px;
       &__score {
         height: 60px;
@@ -98,6 +100,7 @@
       padding-top: 20px;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
     }
     .users {
       padding-left: 10px;
